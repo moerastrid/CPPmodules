@@ -6,7 +6,7 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 13:05:35 by ageels        #+#    #+#                 */
-/*   Updated: 2023/01/30 19:37:20 by ageels        ########   odam.nl         */
+/*   Updated: 2023/01/30 19:39:55 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void phoneLoop(PhoneBook myBook)
 	
 	while (1)
 	{	
+		std::cout << "OPTIONS: ADD / SEARCH / EXIT \n";
 		std::cin >> input;
 		for (int i = 0; i < input.size(); i++)
 			input[i] = toupper(input[i]);
@@ -66,8 +67,6 @@ void phoneLoop(PhoneBook myBook)
 		}
 		else if (input.compare("EXIT") == 0)
 			exit (0);
-		else 
-			std::cout << "OPTIONS: ADD / SEARCH / EXIT \n\n";
 	}
 }
 
