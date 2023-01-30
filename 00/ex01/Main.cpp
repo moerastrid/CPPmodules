@@ -6,17 +6,18 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 13:05:35 by ageels        #+#    #+#                 */
-/*   Updated: 2023/01/30 18:22:39 by ageels        ########   odam.nl         */
+/*   Updated: 2023/01/30 19:37:20 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <limits>
 #include "header.hpp"
 
-void searchBook(PhoneBook myBook)
+int	searchBook(PhoneBook myBook)
 {
-	int number = -1;
+	int number = 0;
 
 	std::cout << "|INDEX     |FIRST NAME|LAST NAME |NICKNAME  |\n";
 	for (int i = 0; i < 8; i++)
@@ -32,32 +33,41 @@ void searchBook(PhoneBook myBook)
 	}
 	std::cout << "\nPLEASE ENTER INDEX NUMBER\n";
 	std::cin >> number;
-	if (number > 0 && number < 7)
+	if (std::cin.fail())
+	{
+		std::cin.clear();
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	}
+	if (number >= 1 && number <= 8 && myBook.contacts[number - 1].FirstName.compare("          ") != 0)
+	{
 		std::cout << "valid\n";
+		number -= 1;
+		myBook.contacts[number].Display();
+	}
 	else
-		number = -1;
-	return ;
+		std::cout << "not valid\n";
+	return (0);
 }
 
 void phoneLoop(PhoneBook myBook)
 {
 	std::string input;
-
-	std::cout << " . . . \nWELCOME TO PHONEBOOK\n . . . \n";
+	
 	while (1)
-	{
-		std::cout << "OPTIONS: ADD / SEARCH / EXIT \n\n";
+	{	
 		std::cin >> input;
 		for (int i = 0; i < input.size(); i++)
 			input[i] = toupper(input[i]);
 		if (input.compare("ADD") == 0)
 			std::cout << "ADDING. . .\n";
 		else if (input.compare("SEARCH") == 0)
+		{
 			searchBook(myBook);
+		}
 		else if (input.compare("EXIT") == 0)
 			exit (0);
 		else 
-			std::cout << "\n";
+			std::cout << "OPTIONS: ADD / SEARCH / EXIT \n\n";
 	}
 }
 
