@@ -6,7 +6,14 @@
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 13:03:52 by ageels        #+#    #+#                 */
-/*   Updated: 2023/01/30 13:03:53 by ageels        ########   odam.nl         */
+/*   Updated: 2023/01/30 14:08:12 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+
+class Contact 
+{
+	public:
+		std::string Name;
+}
