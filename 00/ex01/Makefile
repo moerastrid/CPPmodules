@@ -6,15 +6,13 @@
 #    By: ageels <ageels@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/01/30 12:54:13 by ageels        #+#    #+#                  #
-#    Updated: 2023/01/30 13:05:28 by ageels        ########   odam.nl          #
+#    Updated: 2023/01/30 16:51:41 by ageels        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = PhoneBook.cpp\
-	Contact.cpp\
-	Main.cpp
+SRC = Main.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME) : $(OBJ)
