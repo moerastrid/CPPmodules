@@ -6,12 +6,11 @@
 /*   By: astrid <astrid@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/22 17:41:36 by astrid        #+#    #+#                 */
-/*   Updated: 2023/01/22 17:50:15 by astrid        ########   odam.nl         */
+/*   Updated: 2023/01/30 13:24:23 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cctype>
 
 int main(int argc, char **argv)
 {
@@ -34,4 +33,5 @@ int main(int argc, char **argv)
             i++;
         }
     }
+	std::cout << "\n";
 }
