@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   header.hpp                                         :+:    :+:            */
+/*   Contact.hpp                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/30 17:08:28 by ageels        #+#    #+#                 */
-/*   Updated: 2023/01/30 18:47:14 by ageels        ########   odam.nl         */
+/*   Updated: 2023/02/01 20:28:40 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ class Contact
 		std::string	FirstName;
 		std::string	LastName;
 		std::string	NickName;
-
 		Contact();
-		void AddSecret(std::string secret);
+		void AddContact();
 		void Display();
 	private:
 		std::string DarkestSecret;
+		int PhoneNumber;
 };
 
 Contact::Contact()
@@ -34,26 +34,22 @@ Contact::Contact()
 	DarkestSecret = "          ";
 }
 
-void Contact::AddSecret(std::string secret)
+void Contact::AddContact()
 {
-	DarkestSecret = secret;	
+	std::cout << "FIRST NAME: ";
+	std::cin >> this->FirstName;
+	std::cout << "LAST NAME: ";
+	std::cin >> this->LastName;
+	std::cout << "NICKNAME: ";
+	std::cin >> this->NickName;
+	std::cout << "DARKESTS SECRET: ";
+	std::cin >> this->DarkestSecret;
 }
 
 void Contact::Display()
 {
-	std::cout << "FIRST NAME:" << FirstName << "\n";
-	std::cout << "LAST NAME:" << LastName << "\n";
-	std::cout << "NICKNAME:" << NickName << "\n";
-	std::cout << "DARKEST SECRET:" << DarkestSecret << "\n";
+	std::cout << "FIRST NAME: " << FirstName << std::endl;
+	std::cout << "LAST NAME: " << LastName << std::endl;
+	std::cout << "NICKNAME: " << NickName << std::endl;
+	std::cout << "DARKEST SECRET: " << DarkestSecret << std::endl;
 }
-
-class PhoneBook 
-{
-	public:
-		Contact contacts[8];
-
-	PhoneBook()
-	{
-		std::cout << "CREATED PHONEBOOK\n";
-	}
-};

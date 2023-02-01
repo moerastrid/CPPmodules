@@ -6,7 +6,7 @@
 /*   By: astrid <astrid@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/22 17:41:36 by astrid        #+#    #+#                 */
-/*   Updated: 2023/02/01 19:44:55 by ageels        ########   odam.nl         */
+/*   Updated: 2023/02/01 20:01:50 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int main(int argc, char **argv)
 		for (int j = 0; argv[i][j]; j++)
 			std::cout << (char)toupper(argv[i][j]);
 	}
-	std::cout << "\n";
+	std::cout << std::endl;
 }
