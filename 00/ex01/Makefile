@@ -5,14 +5,19 @@
 #                                                      +:+                     #
 #    By: ageels <ageels@student.codam.nl>             +#+                      #
 #                                                    +#+                       #
-#    Created: 2023/01/30 12:54:13 by ageels        #+#    #+#                  #
-#    Updated: 2023/01/30 16:51:41 by ageels        ########   odam.nl          #
+#    Created: 2023/03/20 12:34:53 by ageels        #+#    #+#                  #
+#    Updated: 2023/03/20 12:47:18 by ageels        ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = MyAwesomePhonebook
+
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = Main.cpp
+
+SRC = main.cpp \
+	PhoneBook.cpp \
+	Contact.cpp \
+
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME) : $(OBJ)

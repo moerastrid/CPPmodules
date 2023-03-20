@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Phonebook.hpp                                      :+:    :+:            */
+/*   phonebook.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: ageels <ageels@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2023/02/01 19:52:29 by ageels        #+#    #+#                 */
-/*   Updated: 2023/02/01 20:14:05 by ageels        ########   odam.nl         */
+/*   Created: 2023/03/20 12:40:43 by ageels        #+#    #+#                 */
+/*   Updated: 2023/03/20 16:53:00 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include <iostream>
+#include <string>
+#include "Contact.hpp"
 
 class PhoneBook 
 {
+	private:
+		Contact MyContacts[8];
+		int		n;
+		bool	set[8];
+
 	public:
-		Contact	myContacts[8];
+		void	createPhoneBook(void);
+		void	addContact(void);
+		void	searchContact(void);
 };

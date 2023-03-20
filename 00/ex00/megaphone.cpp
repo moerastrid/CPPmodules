@@ -6,7 +6,7 @@
 /*   By: astrid <astrid@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/01/22 17:41:36 by astrid        #+#    #+#                 */
-/*   Updated: 2023/02/01 20:01:50 by ageels        ########   odam.nl         */
+/*   Updated: 2023/03/20 13:19:45 by ageels        ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int main(int argc, char **argv)
 {
-	int j;
-
 	if (argc == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		std::cout << std::endl;
 		return (0);
 	}
 	for (int i = 1; argv[i]; i++)
@@ -27,4 +26,5 @@ int main(int argc, char **argv)
 			std::cout << (char)toupper(argv[i][j]);
 	}
 	std::cout << std::endl;
+	return (0);
 }
